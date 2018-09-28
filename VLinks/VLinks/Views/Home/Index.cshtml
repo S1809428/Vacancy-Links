@@ -1,0 +1,204 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<!-- Recently Added Jobs -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 style="padding: 10px 0 10px 15px; font-size: 28px; color: blue;">Recently Added Jobs</h1>
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3" style="text-align:center">
+            <img src="~/img/indexjob1.jpg" style="width:80%;" />
+            <div style="text-align:left;margin-left:35px">
+                <h5 class="card-title">Babysitter</h5>
+                <p class="card-text">
+                    <i class="fas fa-location-arrow"></i>&nbsp;&nbsp; Sanchaung<br />
+                    &nbsp;<i class="fas fa-dollar-sign"></i>&emsp;2.00 per hour<br />
+                    <i class="fas fa-calendar-alt"></i>&nbsp;&nbsp; Mon-Fri<br />
+                    <i class="fas fa-clock"></i>&nbsp;&nbsp; 3:00pm-5:00pm <br />
+                    &nbsp;<i class="fas fa-info"></i>&nbsp;&nbsp;&nbsp;&nbsp; 3-year-old male
+                </p>
+                <input class="btn btn-primary" type="button" value="Apply Now" onclick="location.href='@Url.Action("Vacancies", "Home")'" />
+                <br /><br />
+            </div>
+        </div>
+        <div class="col-md-3" style="text-align:center">
+            <img src="~/img/indexjob6.jpg" style="width:80%;" />
+            <div style="text-align:left;margin-left:35px">
+                <h5 class="card-title">Tutor</h5>
+                <p class="card-text">
+                    <i class="fas fa-location-arrow"></i>&nbsp;&nbsp; Bahan<br />
+                    &nbsp;<i class="fas fa-dollar-sign"></i>&emsp;5.00 per hour<br />
+                    <i class="fas fa-calendar-alt"></i>&nbsp;&nbsp; Mon-Fri<br />
+                    <i class="fas fa-clock"></i>&nbsp;&nbsp; 5:00pm-7:00pm <br />
+                    &nbsp;<i class="fas fa-info"></i>&nbsp;&nbsp;&nbsp;&nbsp; Grade 10 English Teacher
+                </p>
+                <input class="btn btn-primary" type="button" value="Apply Now" onclick="location.href='@Url.Action("Vacancies", "Home")'" />
+                <br /><br />
+            </div>
+        </div>
+        <div class="col-md-3" style="text-align:center">
+            <img src="~/img/indexjob2.jpg" style="width:80%;" />
+            <div style="text-align:left;margin-left:35px">
+                <h5 class="card-title">Animal Caretaker</h5>
+                <p class="card-text">
+                    <i class="fas fa-location-arrow"></i>&nbsp;&nbsp; Latha<br />
+                    &nbsp;<i class="fas fa-dollar-sign"></i>&emsp;3.00 per hour<br />
+                    <i class="fas fa-calendar-alt"></i>&nbsp;&nbsp; Sat-Sun<br />
+                    <i class="fas fa-clock"></i>&nbsp;&nbsp; 8:00am-1:00pm <br />
+                    &nbsp;<i class="fas fa-info"></i>&nbsp;&nbsp;&nbsp;&nbsp; -
+                </p>
+                <input class="btn btn-primary" type="button" value="Apply Now" onclick="location.href='@Url.Action("Vacancies", "Home")'" />
+                <br /><br />
+            </div>
+        </div>
+        <div class="col-md-3" style="text-align:center">
+            <img src="~/img/indexjob3.jpg" style="width:80%;" />
+            <div style="text-align:left;margin-left:35px">
+                <h5 class="card-title">Cashier</h5>
+                <p class="card-text">
+                    <i class="fas fa-location-arrow"></i>&nbsp;&nbsp; Lanmadaw<br />
+                    &nbsp;<i class="fas fa-dollar-sign"></i>&emsp;6.00 per hour<br />
+                    <i class="fas fa-calendar-alt"></i>&nbsp;&nbsp; Mon-Fri<br />
+                    <i class="fas fa-clock"></i>&nbsp;&nbsp; 8:00am-11:00am <br />
+                    &nbsp;<i class="fas fa-info"></i>&nbsp;&nbsp;&nbsp;&nbsp; After State School
+                </p>
+                <input class="btn btn-primary" type="button" value="Apply Now" onclick="location.href='@Url.Action("Vacancies", "Home")'" />
+                <br /><br />
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<!-- --------------- About V-Link --------------- -->
+<div style="width:100%;background-color:#ccc" id="aboutus">
+    <div class="container about">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 style="padding: 10px 30px; font-size: 28px; color: blue;">About Vacancy Links</h1>
+                <p style="padding: 10px 30px; text-align: justify;">
+                    <span style="color: blue">Vacancy Links</span> is a premier executive recruitment search
+                    website, located in <span style="color: blue">Yangon, Myanmar</span>. We focus on senior
+                    to executive level recruitment, as well as experts in headhunting and background checking.
+                    Our recruitment consultants have extensive recruitment, as well as industry experience in
+                    a variety of sectors from leading institutions in Myanmar. Our value comes from the
+                    ability to attract, select, and retain the most talented people in the market through our
+                    industry leading technology and vast professional networks.<br />
+                    Regional leaders look to us to advise them not only on recruitment matters in Myanmar,
+                    but also work with them as partners to plan and execute their business visions. We act
+                    as partners to ensure that our clients don't need to worry about their recruitment plans,
+                    so that they can focus on what they do best.<br />
+                </p>
+            </div>
+            <div class="col-md-3" style="margin:0; padding: 0;text-align:center;vertical-align:central">
+                <br />
+                <img src="~/img/dd.jpg" style="width: 80%;">
+            </div>
+            <div class="col-md-1">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- How it works-->
+<div class="container" id="howitworks">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1 style="color:blue">How It Works</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+            <p>
+                <h3>Need a job quickly?</h3>
+                <br />
+                <ul>
+                    <li>Sit Back, relax and search proper jobs via Vacancy Links!<br /><br /></li>
+                    <li>Simply apply the vacancy and receive phone call from the employer.<br /><br /></li>
+                    <li>Then adjust with them.</li>
+                </ul>
+            </p>
+            <br />
+            <input type="button" value="Find Jobs Now" onclick="location.href='@Url.Action("Vacancies", "Home")'" class="btn btn-primary" />
+            <br /><br />
+        </div>
+        <div class="col-md-3 text-center" style="vertical-align:bottom;padding:0">
+            <br /><br />
+            <iframe style="width:100%;" src="http://www.youtube.com/embed/fxCEcPxUbYA" frameborder="1" allowfullscreen></iframe>
+            <br /><br />
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+<!-- --------------- Feedback --------------- -->
+<div style="width:100%;background-color:#ccc">
+    <div class="container">
+        <br><br>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 id="firstLabel" style="font-size: 28px; color: black;">Users' Feedbacks</h1>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel" style="padding:20px">
+                    <div class="image">
+                        <img src="~/img/feedback2.jpg" style="width:100%;">
+                    </div>
+                    <br>
+                    <div class="data">
+                        <h4>By Ms. Christine Burgener | Aug 25 2018</h4>
+                        <br>
+                        <p style="text-align: justify;">
+                            Though we have been working with Vacancy Links. for only a few weeks, my colleagues and I are
+                            impressed with their consultant professionalism, dedication and more importantly, to make extra
+                            efforts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel" style="padding:20px">
+                    <div class="image">
+                        <img src="~/img/feedback1.jpg" style="width:100%;">
+                    </div>
+                    <br>
+                    <div class="data">
+                        <h4>By Mr. Paul Genova | Sept 5 2018</h4>
+                        <br>
+                        <p style="text-align: justify;">
+                            Their after sales service is also a great asset Their role does not stop at sourcing candidates,
+                            they also assist greatly during the negotiation process to ensure the candidates and the company
+                            reach an agreement fair to both parties.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel" style="padding:20px">
+                    <div class="image">
+                        <img src="~/img/feedback3.jpg" style="width:100%;">
+                    </div>
+                    <br>
+                    <div class="data">
+                        <h4>By Mr. Zagros Mississauga | June 10 2018</h4>
+                        <br>
+                        <p style="text-align: justify;">
+                            I have been in contact with Vacancy Links for the past 18 months and found them to be very
+                            professional and proactive. The Consultant that assisted me went out of her way to source
+                            Managers that fully suit my Company's needs. She took the time to deeply understand
+                            my requirements.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </div>
+
+</div>
