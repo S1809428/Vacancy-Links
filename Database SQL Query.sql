@@ -73,4 +73,5 @@ appliedtime varchar(30) ,
 )
 insert into uservlog values('aungkaungkhent@gmail.com','100000','28-9-2018')
 select * from vacancy
+DROP TABLE vacancy
 drop table uservlog
