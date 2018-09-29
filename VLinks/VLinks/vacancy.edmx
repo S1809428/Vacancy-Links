@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="vacancylinksModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="uservlog">
+          <Key>
+            <PropertyRef Name="usergmail" />
+          </Key>
+          <Property Name="usergmail" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="vid" Type="int" />
+          <Property Name="appliedtime" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="vacancy">
+          <Key>
+            <PropertyRef Name="vid" />
+          </Key>
+          <Property Name="vid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="j_title" Type="varchar" MaxLength="30" />
+          <Property Name="location" Type="varchar" MaxLength="30" />
+          <Property Name="salary" Type="varchar" MaxLength="30" />
+          <Property Name="workingday" Type="varchar" MaxLength="20" />
+          <Property Name="workingtime" Type="varchar" MaxLength="20" />
+          <Property Name="vdescription" Type="varchar" MaxLength="30" />
+          <Property Name="vpostdate" Type="varchar" MaxLength="30" />
+          <Property Name="vexpireddate" Type="varchar" MaxLength="30" />
+          <Property Name="companygmail" Type="varchar" MaxLength="30" />
+          <Property Name="companyphone" Type="varchar" MaxLength="30" />
+          <Property Name="lat" Type="varchar" MaxLength="30" />
+          <Property Name="lng" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <Association Name="FK__uservlog__vid__239E4DCF">
+          <End Role="vacancy" Type="Self.vacancy" Multiplicity="0..1" />
+          <End Role="uservlog" Type="Self.uservlog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vacancy">
+              <PropertyRef Name="vid" />
+            </Principal>
+            <Dependent Role="uservlog">
+              <PropertyRef Name="vid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="vacancylinksModelStoreContainer">
+          <EntitySet Name="uservlog" EntityType="Self.uservlog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vacancy" EntityType="Self.vacancy" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__uservlog__vid__239E4DCF" Association="Self.FK__uservlog__vid__239E4DCF">
+            <End Role="vacancy" EntitySet="vacancy" />
+            <End Role="uservlog" EntitySet="uservlog" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="vacancylinksModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="vacancy">
+          <Key>
+            <PropertyRef Name="vid" />
+          </Key>
+          <Property Name="vid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="j_title" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="location" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="salary" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="workingday" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="workingtime" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="vdescription" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="vpostdate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="vexpireddate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="companygmail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="companyphone" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="lat" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="lng" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="uservlogs" Relationship="vacancylinksModel.FK__uservlog__vid__239E4DCF" FromRole="vacancy" ToRole="uservlog" />
+        </EntityType>
+        <EntityContainer Name="vacancylinksEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="vacancies" EntityType="Self.vacancy" />
+          <EntitySet Name="uservlogs" EntityType="vacancylinksModel.uservlog" />
+          <AssociationSet Name="FK__uservlog__vid__239E4DCF" Association="vacancylinksModel.FK__uservlog__vid__239E4DCF">
+            <End Role="vacancy" EntitySet="vacancies" />
+            <End Role="uservlog" EntitySet="uservlogs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="uservlog">
+          <Key>
+            <PropertyRef Name="usergmail" />
+          </Key>
+          <Property Name="usergmail" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="vid" Type="Int32" />
+          <Property Name="appliedtime" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="vacancy" Relationship="vacancylinksModel.FK__uservlog__vid__239E4DCF" FromRole="uservlog" ToRole="vacancy" />
+        </EntityType>
+        <Association Name="FK__uservlog__vid__239E4DCF">
+          <End Type="vacancylinksModel.vacancy" Role="vacancy" Multiplicity="0..1" />
+          <End Type="vacancylinksModel.uservlog" Role="uservlog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vacancy">
+              <PropertyRef Name="vid" />
+            </Principal>
+            <Dependent Role="uservlog">
+              <PropertyRef Name="vid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="vacancylinksModelStoreContainer" CdmEntityContainer="vacancylinksEntities">
+          <EntitySetMapping Name="vacancies">
+            <EntityTypeMapping TypeName="vacancylinksModel.vacancy">
+              <MappingFragment StoreEntitySet="vacancy">
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="j_title" ColumnName="j_title" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="workingday" ColumnName="workingday" />
+                <ScalarProperty Name="workingtime" ColumnName="workingtime" />
+                <ScalarProperty Name="vdescription" ColumnName="vdescription" />
+                <ScalarProperty Name="vpostdate" ColumnName="vpostdate" />
+                <ScalarProperty Name="vexpireddate" ColumnName="vexpireddate" />
+                <ScalarProperty Name="companygmail" ColumnName="companygmail" />
+                <ScalarProperty Name="companyphone" ColumnName="companyphone" />
+                <ScalarProperty Name="lat" ColumnName="lat" />
+                <ScalarProperty Name="lng" ColumnName="lng" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="uservlogs">
+            <EntityTypeMapping TypeName="vacancylinksModel.uservlog">
+              <MappingFragment StoreEntitySet="uservlog">
+                <ScalarProperty Name="appliedtime" ColumnName="appliedtime" />
+                <ScalarProperty Name="vid" ColumnName="vid" />
+                <ScalarProperty Name="usergmail" ColumnName="usergmail" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

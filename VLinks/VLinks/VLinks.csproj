@@ -49,6 +49,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -205,6 +207,27 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="uservlog.cs">
+      <DependentUpon>vacancy.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vacancy.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vacancy.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vacancy.cs">
+      <DependentUpon>vacancy.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vacancy.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vacancy.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="vacancy1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>vacancy.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -242,6 +265,16 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="vacancy.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>vacancy.edmx</DependentUpon>
+      <LastGenOutput>vacancy.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="vacancy.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>vacancy.edmx</DependentUpon>
+      <LastGenOutput>vacancy1.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -277,6 +310,13 @@
     <Content Include="Views\Home\Vacancies.cshtml" />
     <Content Include="Views\Home\Pnp.cshtml" />
     <Content Include="Views\Home\Tnc.cshtml" />
+    <EntityDeploy Include="vacancy.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>vacancy.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="vacancy.edmx.diagram">
+      <DependentUpon>vacancy.edmx</DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -293,6 +333,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

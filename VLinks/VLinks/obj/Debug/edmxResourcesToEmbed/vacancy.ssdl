@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="vacancylinksModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="uservlog">
+    <Key>
+      <PropertyRef Name="usergmail" />
+    </Key>
+    <Property Name="usergmail" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="vid" Type="int" />
+    <Property Name="appliedtime" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="vacancy">
+    <Key>
+      <PropertyRef Name="vid" />
+    </Key>
+    <Property Name="vid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="j_title" Type="varchar" MaxLength="30" />
+    <Property Name="location" Type="varchar" MaxLength="30" />
+    <Property Name="salary" Type="varchar" MaxLength="30" />
+    <Property Name="workingday" Type="varchar" MaxLength="20" />
+    <Property Name="workingtime" Type="varchar" MaxLength="20" />
+    <Property Name="vdescription" Type="varchar" MaxLength="30" />
+    <Property Name="vpostdate" Type="varchar" MaxLength="30" />
+    <Property Name="vexpireddate" Type="varchar" MaxLength="30" />
+    <Property Name="companygmail" Type="varchar" MaxLength="30" />
+    <Property Name="companyphone" Type="varchar" MaxLength="30" />
+    <Property Name="lat" Type="varchar" MaxLength="30" />
+    <Property Name="lng" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <Association Name="FK__uservlog__vid__239E4DCF">
+    <End Role="vacancy" Type="Self.vacancy" Multiplicity="0..1" />
+    <End Role="uservlog" Type="Self.uservlog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vacancy">
+        <PropertyRef Name="vid" />
+      </Principal>
+      <Dependent Role="uservlog">
+        <PropertyRef Name="vid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="vacancylinksModelStoreContainer">
+    <EntitySet Name="uservlog" EntityType="Self.uservlog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vacancy" EntityType="Self.vacancy" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__uservlog__vid__239E4DCF" Association="Self.FK__uservlog__vid__239E4DCF">
+      <End Role="vacancy" EntitySet="vacancy" />
+      <End Role="uservlog" EntitySet="uservlog" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

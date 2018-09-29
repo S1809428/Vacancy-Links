@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="vacancylinksModelStoreContainer" CdmEntityContainer="vacancylinksEntities">
+    <EntitySetMapping Name="vacancies">
+      <EntityTypeMapping TypeName="vacancylinksModel.vacancy">
+        <MappingFragment StoreEntitySet="vacancy">
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="j_title" ColumnName="j_title" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="workingday" ColumnName="workingday" />
+          <ScalarProperty Name="workingtime" ColumnName="workingtime" />
+          <ScalarProperty Name="vdescription" ColumnName="vdescription" />
+          <ScalarProperty Name="vpostdate" ColumnName="vpostdate" />
+          <ScalarProperty Name="vexpireddate" ColumnName="vexpireddate" />
+          <ScalarProperty Name="companygmail" ColumnName="companygmail" />
+          <ScalarProperty Name="companyphone" ColumnName="companyphone" />
+          <ScalarProperty Name="lat" ColumnName="lat" />
+          <ScalarProperty Name="lng" ColumnName="lng" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="uservlogs">
+      <EntityTypeMapping TypeName="vacancylinksModel.uservlog">
+        <MappingFragment StoreEntitySet="uservlog">
+          <ScalarProperty Name="appliedtime" ColumnName="appliedtime" />
+          <ScalarProperty Name="vid" ColumnName="vid" />
+          <ScalarProperty Name="usergmail" ColumnName="usergmail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
