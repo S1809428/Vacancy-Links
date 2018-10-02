@@ -1,0 +1,100 @@
+﻿@model IEnumerable<VLinks.vacancy>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.j_title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.salary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.workingday)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.workingtime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vdescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vpostdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.vexpireddate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.companygmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.companyphone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lng)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.j_title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.salary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.workingday)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.workingtime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vdescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vpostdate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.vexpireddate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.companygmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.companyphone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lng)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.vid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.vid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.vid })
+        </td>
+    </tr>
+}
+
+</table>

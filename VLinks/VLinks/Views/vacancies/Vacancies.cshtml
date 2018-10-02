@@ -1,0 +1,97 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<VLinks.vacancy>
+
+
+@{
+    ViewBag.Title = "Vacancies";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container" style="">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <br /><br />
+            <h2>There are better carriers out there. We will help you find it.</h2>
+            <br /><br />
+        </div>
+    </div>
+    <div class="row" style="font-size:18px">
+        <div class="col-md-2">
+        </div>
+        <div class="col-md-3 text-center">
+            <label style="font-size:20px">Job Title</label>&emsp;
+            <select id="jt">
+                <option value="Animal Caretaker">Animal Caretaker</option>
+                <option value="Babysitter">Babysitter</option>
+                <option value="Bartender">Bartender</option>
+                <option value="Bookkeeper">Bookkeeper</option>
+                <option value="Cashier">Cashier</option>
+                <option value="Fitness Trainer">Fitness Trainer</option>
+                <option value="Restaurant Server">Restaurant Server</option>
+                <option value="Nursing Assistant">Nursing Assistant</option>
+                <option>Tutor</option>
+            </select>
+            <br /><br /><br />
+        </div>
+        <div class="col-md-3 text-center">
+            <label style="font-size:20px">Job Location</label>&emsp;
+            <select id="jl">
+                <option value="Ahlon">Ahlon</option>
+                <option value="Bahan">Bahan</option>
+                <option value="Lanmadaw">Lanmadaw</option>
+                <option value="Latha">Latha</option>
+                <option value="Sanchaung">Sanchaung</option>
+            </select>
+            <br /><br /><br />
+        </div>
+        <div class="col-md-2 text-center">
+            <input type="button" style="font-size:13px" class="btn btn-primary" value="Search" onclick="location.href='<%: Url.Action("Vacancies", "vacancies") %>
+            <br /><br /><br />
+        </div>
+        <div class="col-md-2">
+        </div>
+    </div>
+    <div class="row" style="font-size:16px">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4" style="padding:10px">
+                <div class="effect1" style="border:1px solid black;padding:30px;border-radius:5px;">
+                    <table style="width:100%;line-height:30px">
+                        <tr>
+                            <td width="50%">@Html.Label("Job Title")</td>
+                            <td width="50%">@Html.DisplayFor(modelItem => item.j_title)</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">@Html.Label("Job Location")</td>
+                            <td width="50%">@Html.DisplayFor(modelItem => item.location)</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">@Html.Label("Payment")</td>
+                            <td width="50%">@Html.DisplayFor(modelItem => item.salary)</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                @Html.ActionLink("Details", "Details", new { id = item.vid }, new { @class = "btn btn-primary" })
+                                @Html.ActionLink("Apply", "Details", new { id = item.vid }, new { @class = "btn btn-primary" })
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <div class="pagedList">
+                @Html.PagedListPager(Model, page => Url.Action("Vacancies", new { page }),
+            PagedListRenderOptions.PageNumbersOnly)
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
