@@ -17,16 +17,20 @@ namespace VLinks.Controllers
         //private vacancy vlink = new vacancy();
 
         public ActionResult Vacancies(int page = 1)
-        {   
-            int recordsPerPage = 9;
+        {               
+            int recordsPerPage = 12;
             var list = db.vacancies.ToList().ToPagedList(page, recordsPerPage);
             return View(list);
-        }
-        
-        public JsonResult GetLat(int id)
-        {            
-            var lat = from v in db.vacancies select new{ v.lat };                                                                
-            return Json(lat,JsonRequestBehavior.AllowGet);
+        }        
+
+        public ActionResult Search(int page = 1)
+        {
+            string jt = Request.Form["dropdown1"].ToString();
+            string jl = Request.Form["dropdown2"].ToString();
+            var v = db.vacancies.Where(g => g.location == jl && g.j_title == jt);
+            int recordsPerPage = 12;
+            var list = v.ToList().ToPagedList(page, recordsPerPage);
+            return View(list);
         }
         // GET: vacancies
         public ActionResult Index()

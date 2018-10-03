@@ -2,9 +2,10 @@
 @using PagedList.Mvc;
 @model IPagedList<VLinks.vacancy>
 
-
 @{
-    ViewBag.Title = "Vacancies";
+    /**/
+
+    ViewBag.Title = "Search";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -16,7 +17,7 @@
             <br /><br />
         </div>
     </div>
-    @using (Html.BeginForm("Search", "vacancies", FormMethod.Post, new { page=1 }))
+    @using (Html.BeginForm("Search", "vacancies", FormMethod.Post, new { page = 1 }))
     {
         <div class="row" style="font-size:18px">
             <div class="col-md-2">
@@ -27,7 +28,7 @@
                 {
                 new SelectListItem { Text = "Animal Caretaker", Value = "Animal Caretaker"},
                 new SelectListItem { Text = "Babysitter", Value = "Babysitter"},
-                new SelectListItem { Text = "Batender", Value = "Bookkeeper"},
+                new SelectListItem { Text = "Bartender", Value = "Bartender"},
                 new SelectListItem { Text = "Cashier", Value = "Cashier"},
                 new SelectListItem { Text = "Fitness Trainer", Value = "Fitness Trainer"},
                 new SelectListItem { Text = "Restaurant Server", Value = "Restaurant"},
@@ -94,6 +95,7 @@
         </div>
     </div>
 </div>
+
 
 
 

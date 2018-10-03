@@ -14,7 +14,6 @@ companyphone varchar(30),
 lat varchar(30),
 lng varchar(30)
 )
-select * from vacancy
 --<ahlon
 insert into vacancy values('Animal Caretaker','Ahlon','3.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.7848808','96.1192042')
 insert into vacancy values('Babysitter','Ahlon','4.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.7848808','96.1192042')
@@ -66,6 +65,57 @@ insert into vacancy values('Restaurant Server','Sanchaung','4.00 per hour','Mon-
 insert into vacancy values('Nursing Assistant','Sanchaung','5.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.8061429','96.1254224')
 insert into vacancy values('Tutor','Sanchaung','6.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.8061429','96.1254224')
 
+--<ahlon1
+insert into vacancy values('Animal Caretaker','Ahlon','4.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.7848808','96.1192042')
+insert into vacancy values('Babysitter','Ahlon','5.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.7848808','96.1192042')
+insert into vacancy values('Bartender','Ahlon','6.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.7848808','96.1192042')
+insert into vacancy values('Bookkeeper','Ahlon','7.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.7848808','96.1192042')
+insert into vacancy values('Cashier','Ahlon','8.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.7848808','96.1192042')
+insert into vacancy values('Fitness Trainer','Ahlon','4.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.7848808','96.1192042')
+insert into vacancy values('Restaurant Server','Ahlon','5.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.7848808','96.1192042')
+insert into vacancy values('Nursing Assistant','Ahlon','6.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.7848808','96.1192042')
+insert into vacancy values('Tutor','Ahlon','7.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.7848808','96.1192042')
+--<bahan1
+insert into vacancy values('Animal Caretaker','Bahan','4.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.8112795','96.139815')
+insert into vacancy values('Babysitter','Bahan','5.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.8112795','96.139815')
+insert into vacancy values('Bartender','Bahan','6.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.8112795','96.139815')
+insert into vacancy values('Bookkeeper','Bahan','7.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.8112795','96.139815')
+insert into vacancy values('Cashier','Bahan','8.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.8112795','96.139815')
+insert into vacancy values('Fitness Trainer','Bahan','4.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.8112795','96.139815')
+insert into vacancy values('Restaurant Server','Bahan','5.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.8112795','96.139815')
+insert into vacancy values('Nursing Assistant','Bahan','6.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.8112795','96.139815')
+insert into vacancy values('Tutor','Bahan','7.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.8112795','96.139815')
+--<Lanmadaw1
+insert into vacancy values('Animal Caretaker','Lanmadaw','4.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.7775125','96.1322323')
+insert into vacancy values('Babysitter','Lanmadaw','5.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.7775125','96.1322323')
+insert into vacancy values('Bartender','Lanmadaw','6.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.7775125','96.1322323')
+insert into vacancy values('Bookkeeper','Lanmadaw','7.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.7775125','96.1322323')
+insert into vacancy values('Cashier','Lanmadaw','8.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.7775125','96.1322323')
+insert into vacancy values('Fitness Trainer','Lanmadaw','9.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.7775125','96.1322323')
+insert into vacancy values('Restaurant Server','Lanmadaw','5.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.7775125','96.1322323')
+insert into vacancy values('Nursing Assistant','Lanmadaw','6.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.7775125','96.1322323')
+insert into vacancy values('Tutor','Lanmadaw','7.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.7775125','96.1322323')
+--<Latha1
+insert into vacancy values('Animal Caretaker','Latha','4.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.774317','96.1412')
+insert into vacancy values('Babysitter','Latha','5.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.774317','96.1412')
+insert into vacancy values('Bartender','Latha','6.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.774317','96.1412')
+insert into vacancy values('Bookkeeper','Latha','7.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.774317','96.1412')
+insert into vacancy values('Cashier','Latha','8.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.774317','96.1412')
+insert into vacancy values('Fitness Trainer','Latha','9.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.774317','96.1412')
+insert into vacancy values('Restaurant Server','Latha','5.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.774317','96.1412')
+insert into vacancy values('Nursing Assistant','Latha','6.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.774317','96.1412')
+insert into vacancy values('Tutor','Latha','7.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.774317','96.1412')
+--<Sanchaung1
+insert into vacancy values('Animal Caretaker','Sanchaung','4.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.8061429','96.1254224')
+insert into vacancy values('Babysitter','Sanchaung','5.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.8061429','96.1254224')
+insert into vacancy values('Bartender','Sanchaung','6.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.8061429','96.1254224')
+insert into vacancy values('Bookkeeper','Sanchaung','7.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.8061429','96.1254224')
+insert into vacancy values('Cashier','Sanchaung','8.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.8061429','96.1254224')
+insert into vacancy values('Fitness Trainer','Sanchaung','4.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.8061429','96.1254224')
+insert into vacancy values('Restaurant Server','Sanchaung','5.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.8061429','96.1254224')
+insert into vacancy values('Nursing Assistant','Sanchaung','6.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.8061429','96.1254224')
+insert into vacancy values('Tutor','Sanchaung','7.00 per hour','Mon-Fri','8:00am-1:00pm','aaaaa','25-9-2018','29-9-2018','kbz@gmail.com','9798775779','16.8061429','96.1254224')
+
 create table uservlog(
 usergmail varchar(30) primary key,
 vid int foreign key references vacancy(vid),
@@ -74,5 +124,7 @@ appliedtime varchar(30) ,
 insert into uservlog values('aungkaungkhent@gmail.com','100000','28-9-2018')
 select * from vacancy
 select * from uservlog
+delete uservlog
+delete vacancy where vid='100045'
 DROP TABLE vacancy
 drop table uservlog

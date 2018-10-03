@@ -335,6 +335,7 @@
     <Content Include="Views\vacancies\Edit.cshtml" />
     <Content Include="Views\vacancies\Index.cshtml" />
     <Content Include="Views\vacancies\Vacancies.cshtml" />
+    <Content Include="Views\vacancies\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
