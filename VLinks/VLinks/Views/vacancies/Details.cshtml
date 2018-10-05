@@ -3,8 +3,15 @@
     /**/
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var latitude = @Model.lat;
+    var longitude = @Model.lng;
 }
-
+<style>
+    #map {
+        width: 100%;
+        height: 350px;
+    }
+</style>
 <div class="container">
     <div class="row" style="border-bottom:3px solid black">
         <div class="col-md-12" style="margin-top:30px"><h2>Job Details</h2></div>
@@ -45,15 +52,49 @@
                         <input style="font-size:16px" class="btn btn-primary" type="button" value="Back" onclick="location.href='@Url.Action("Vacancies", "Home")'" />
                         <br />
                     </td>
-                    <td class="text-right" style="width:50%;padding:10px">
-                        <input style="font-size:16px" class="btn btn-primary" type="button" value="Apply" onclick="location.href='@Url.Action("Vacancies", "Home")'" />
+                    <td class="text-right" style="width:50%;padding:10px">                        
+                        <input style="font-size:16px" class="btn btn-primary" type="button" value="Apply" onclick="login_app()" />
                         <br />
                     </td>
                 </tr>
             </table>
+            <br /><br /><br />
         </div>
-        <div class="col-md-6 text-center">            
+        <div class="col-md-6 text-center">
+            <div id="map"></div>
+            <br /><br /><br />
         </div>
     </div>
 </div>
-
+<script>
+    function initMap() {
+            var latitude = Number(@latitude);
+            var longitude = Number(@longitude);
+            var uluru = { lat: latitude, lng: longitude};
+            var mapProp = {
+                center: uluru,
+                zoom: 10,
+                mapTypeId: google.maps.MapTypeId.hybrid
+            };
+            map = new google.maps.Map(document.getElementById('map'), mapProp);
+            var marker = new google.maps.Marker({ position: uluru, map: map });
+    }   
+    
+    function login_app() {
+        FB.logout(function (response) {
+            console.log("logged out");
+        });
+        FB.login(function (response) {
+            if (response.status === 'connected') {
+                FB.api('/me?fields=id,name,email', profile => {
+                    console.log(profile);
+                    alert("You have successfully applied the job vacancy.");
+                    alert("Stay tune with your Email inbox");
+                });
+            } else {
+                console.log("not logged in");
+            }
+        }, { scope: 'email' });
+    }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfQYMDZmPiwX39MM3jHU5IPj5FmAU23gE&callback=initMap"></script>
