@@ -1,0 +1,35 @@
+﻿@model VLinks.uservlog
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>uservlog</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.appliedtime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.appliedtime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.vacancy.j_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.vacancy.j_title)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.usergmail }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

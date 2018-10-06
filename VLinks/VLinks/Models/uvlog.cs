@@ -10,5 +10,14 @@ namespace VLinks.Models
         public string usergmail { get; set; }
         public int vid { get; set; }
         public string appliedtime { get; set; }
+        
+        
+
+        public uvlog(string usergmail, int vid, string appliedtime)
+        {
+            this.usergmail = usergmail;
+            this.vid = vid;
+            this.appliedtime = appliedtime;
+        }
     }
 }

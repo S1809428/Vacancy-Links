@@ -39,11 +39,15 @@
             });
             FB.login(function (response) {
                 if (response.status === 'connected') {
-                    FB.api('/me?fields=id,name,email', profile => {
-                        console.log(profile);
-                        alert("You have successfully applied the job vacancy.");
-                        alert("Stay tune with your Email inbox");
-                    });
+                        FB.api('/me?fields=id,name,email', profile => {
+                            console.log(profile);
+                            alert(profile['name'] + ", you have successfully applied the job vacancy.");
+                            alert("Stay tune with your Email inbox");
+                            var data = profile['email'];
+                            $("#email").html("" + data);
+                            location.reload();
+                            //$("#vid11").html("" + data);
+                        });
                 } else {
                     console.log("not logged in");
                 }
@@ -89,16 +93,16 @@
                         <br />
                         <p>
                             Database-First approach is used for Vacancy Links and then integrate with .Net MVC framework and entity framework 6.
-                            <br/>
+                            <br />
                             In order to retrieve and search job information from the database, SQL commands are executed in asp.net MVC framework for the data to be able to pass through via the entity framework. Besides, to explore precise location of each job, Google Map API is used.
-                            <br/>
+                            <br />
                             Facebook log in is applied for multiple users (even though it is one and only single role) to be so much convenient that if they would like to apply the job vacancies, they just have to log in their own Facebook accounts.
-                            <br/>
-                            Recommendation for improvements of Vacancy Links are                           
+                            <br />
+                            Recommendation for improvements of Vacancy Links are
                             <ul>
                                 <li>In “Recently Added Jobs” division in Home Page, the jobs should be dynamic according to the database</li>
                                 <li>Jobs can be sorted by categories such as salary.</li>
-                            </ul>                                                        
+                            </ul>
                         </p>
                         <br />
                         <p> Aung Kaung Khant</p>
@@ -138,6 +142,8 @@
         </div>
         <br><br>
     </div>
+    <div id="email" style="display:none"></div>
+    <div id="vid11" style="display:none"></div>
     <footer style="margin-top:20px">
         <p class="text-center">&copy; 2018 - Vacancy Links</p>
     </footer>

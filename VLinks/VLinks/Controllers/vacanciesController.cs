@@ -8,6 +8,9 @@ using System.Web;
 using System.Web.Mvc;
 using VLinks;
 using PagedList;
+using Facebook;
+using Newtonsoft.Json;
+using System.Web.Security;
 
 namespace VLinks.Controllers
 {
@@ -30,16 +33,16 @@ namespace VLinks.Controllers
         }
 
         public ActionResult Vacancies(int page = 1)
-        {               
+        {
             int recordsPerPage = 12;
             var list = db.vacancies.ToList().ToPagedList(page, recordsPerPage);
             return View(list);
-        }        
+        }
 
         public ActionResult Search(int page = 1)
         {
             string jt = Request.Form["dropdown1"].ToString();
-            string jl = Request.Form["dropdown2"].ToString();            
+            string jl = Request.Form["dropdown2"].ToString();
             int recordsPerPage = 12;
             var v = db.vacancies.Where(g => g.j_title == jt && g.location == jl);
             //if (!jt.Equals("--Select Job Title--")&& !jl.Equals("--Select Location--")) {
@@ -54,7 +57,7 @@ namespace VLinks.Controllers
             var list = v.ToList().ToPagedList(page, recordsPerPage);
             return View(list);
         }
-        
+
         public ActionResult Index()
         {
             return View();
@@ -78,6 +81,17 @@ namespace VLinks.Controllers
         public ActionResult Create()
         {
             return View();
+        }
+
+        public ActionResult Final()
+        {           
+            return View();
+        }
+        [HttpPost]
+        public void Save1() {
+            //string email = Request["email"].ToString();            
+            //string query = "insert into * FROM Department WHERE DepartmentID = @p0";
+            //db.uservlogs.SqlQuery(query).SingleOrDefaultAsync();
         }
 
         // POST: vacancies/Create
@@ -162,5 +176,51 @@ namespace VLinks.Controllers
             }
             base.Dispose(disposing);
         }
+
+        private Uri RedirectUri
+        {
+            get
+            {
+                var uriBuilder = new UriBuilder(Request.Url);
+                uriBuilder.Query = null;
+                uriBuilder.Fragment = null;
+                uriBuilder.Path = Url.Action("facebookCallback");
+                return uriBuilder.Uri;
+            }
+        }
+
+        [AllowAnonymous]
+        public ActionResult Facebook()
+        {
+            var fb = new FacebookClient();
+            var loginurl = fb.GetLoginUrl(new
+            {
+                client_id = "247603365953139",
+                client_secret = "e74669cc6e66a295a3ca871f43f8a461",
+                redirect_uri = RedirectUri.AbsoluteUri,
+                response_type = "code",
+                scope = "email"
+            });
+            return Redirect(loginurl.AbsoluteUri);
+        }
+
+        public ActionResult FacebookCallback(string code) {
+            var fb = new FacebookClient();
+            dynamic result = fb.Post("oauth/access_token",new
+            {
+                client_id = "247603365953139",
+                client_secret = "e74669cc6e66a295a3ca871f43f8a461",
+                redirect_uri = RedirectUri.AbsoluteUri,
+                code=code
+            });
+            var accessToken = result.access_Token;
+            Session["AccessToken"]= accessToken;
+            fb.AccessToken = accessToken;
+            dynamic me = fb.Get("me?fields=email");
+            string email = me.email;
+            FormsAuthentication.SetAuthCookie(email,false);
+            return RedirectToAction("Final", "vacancies");
+        }
+
     }
 }

@@ -55,8 +55,8 @@ namespace VLinks
             //   consumerSecret: "");
 
             //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            //   appId: "247603365953139",
+            //   appSecret: "e74669cc6e66a295a3ca871f43f8a461");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
