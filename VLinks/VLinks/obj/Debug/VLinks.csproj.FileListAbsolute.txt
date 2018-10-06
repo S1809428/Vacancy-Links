@@ -1,3 +1,5 @@
+D:\GUSTO\Third Year\Vacancy-Links\VLinks\VLinks\obj\Debug\VLinks.csprojAssemblyReference.cache
+D:\GUSTO\Third Year\Vacancy-Links\VLinks\VLinks\obj\Debug\VLinks.csproj.CoreCompileInputs.cache
 D:\GUSTO\Third Year\Vacancy-Links\VLinks\VLinks\bin\ApplicationInsights.config
 D:\GUSTO\Third Year\Vacancy-Links\VLinks\VLinks\bin\VLinks.dll.config
 D:\GUSTO\Third Year\Vacancy-Links\VLinks\VLinks\bin\VLinks.dll
@@ -117,8 +119,6 @@ D:\GUSTO\Third Year\Vacancy-Links\VLinks\VLinks\bin\Microsoft.AI.DependencyColle
 D:\GUSTO\Third Year\Vacancy-Links\VLinks\VLinks\bin\Microsoft.AI.WindowsServer.xml
 D:\GUSTO\Third Year\Vacancy-Links\VLinks\VLinks\bin\Microsoft.AI.Web.xml
 D:\GUSTO\Third Year\Vacancy-Links\VLinks\VLinks\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\GUSTO\Third Year\Vacancy-Links\VLinks\VLinks\obj\Debug\VLinks.csprojAssemblyReference.cache
-D:\GUSTO\Third Year\Vacancy-Links\VLinks\VLinks\obj\Debug\VLinks.csproj.CoreCompileInputs.cache
 D:\GUSTO\Third Year\Vacancy-Links\VLinks\VLinks\obj\Debug\VLinks.csproj.CopyComplete
 D:\GUSTO\Third Year\Vacancy-Links\VLinks\VLinks\obj\Debug\VLinks.dll
 D:\GUSTO\Third Year\Vacancy-Links\VLinks\VLinks\obj\Debug\VLinks.pdb

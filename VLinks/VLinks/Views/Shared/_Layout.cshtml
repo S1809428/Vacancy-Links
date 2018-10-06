@@ -33,7 +33,22 @@
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
 
-        
+        function login_app() {
+            FB.logout(function (response) {
+                console.log("logged out");
+            });
+            FB.login(function (response) {
+                if (response.status === 'connected') {
+                    FB.api('/me?fields=id,name,email', profile => {
+                        console.log(profile);
+                        alert("You have successfully applied the job vacancy.");
+                        alert("Stay tune with your Email inbox");
+                    });
+                } else {
+                    console.log("not logged in");
+                }
+            }, { scope: 'email' });
+        }
     </script>
 </head>
 <body style="font-family: 'Oswald', sans-serif;">
@@ -45,17 +60,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Vacancy Links", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Vacancy Links", "Index", "vacancies", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("About us", "Index", "Home")</li>
-                    <li>@Html.ActionLink("How it works", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About us", "Index", "vacancies")</li>
+                    <li>@Html.ActionLink("How it works", "Index", "vacancies")</li>
                     <li>@Html.ActionLink("Find your job ", "Vacancies", "vacancies")</li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink("Privacy & Policy", "Pnp", "Home")</li>
-                    <li>@Html.ActionLink("Terms & Conditions", "Tnc", "Home")</li>
+                    <li>@Html.ActionLink("Privacy & Policy", "Pnp", "vacancies")</li>
+                    <li>@Html.ActionLink("Terms & Conditions", "Tnc", "vacancies")</li>
                 </ul>
             </div>
         </div>
@@ -100,12 +115,12 @@
                     <div class="data">
                         <h2 style="color:gray">Quick Links</h2>
                         <ul style="text-decoration: none;">
-                            <li>@Html.ActionLink("Home", "Index", "Home", new { @style = "color:gray;" })</li>
-                            <li>@Html.ActionLink("About us", "Index", "Home", new { @style = "color:gray;" })</li>
-                            <li>@Html.ActionLink("How it works", "Index", "Home", new { @style = "color:gray;" })</li>
-                            <li>@Html.ActionLink("Find your job ", "Vacancies", "vacancies", new { @style = "color:gray;" })</li>
-                            <li>@Html.ActionLink("Privacy & Policy", "Pnp", "Home", new { @style = "color:gray;" })</li>
-                            <li>@Html.ActionLink("Terms & Conditions", "Tnc", "Home", new { @style = "color:gray;" })</li>
+                            <li>@Html.ActionLink("Home", "Index", "vacancies", new { @style = "color:gray;" })</li>
+                            <li>@Html.ActionLink("About us", "Index", "vacancies", new { @style = "color:gray;" })</li>
+                            <li>@Html.ActionLink("How it works", "Index", "vacancies", new { @style = "color:gray;" })</li>
+                            <li>@Html.ActionLink("Find your job", "Vacancies", "vacancies", new { @style = "color:gray;" })</li>
+                            <li>@Html.ActionLink("Privacy & Policy", "Pnp", "vacancies", new { @style = "color:gray;" })</li>
+                            <li>@Html.ActionLink("Terms & Conditions", "Tnc", "vacancies", new { @style = "color:gray;" })</li>
                         </ul>
                     </div>
                 </div>

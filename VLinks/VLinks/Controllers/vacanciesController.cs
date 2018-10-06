@@ -14,7 +14,20 @@ namespace VLinks.Controllers
     public class vacanciesController : Controller
     {
         private vacancylinksEntities db = new vacancylinksEntities();
-        //private vacancy vlink = new vacancy();
+
+        public ActionResult Pnp()
+        {
+            ViewBag.Message = "Privacy & Policy page.";
+
+            return View();
+        }
+
+        public ActionResult Tnc()
+        {
+            ViewBag.Message = "Terms & Conditon page.";
+
+            return View();
+        }
 
         public ActionResult Vacancies(int page = 1)
         {               
@@ -26,16 +39,25 @@ namespace VLinks.Controllers
         public ActionResult Search(int page = 1)
         {
             string jt = Request.Form["dropdown1"].ToString();
-            string jl = Request.Form["dropdown2"].ToString();
-            var v = db.vacancies.Where(g => g.location == jl && g.j_title == jt);
+            string jl = Request.Form["dropdown2"].ToString();            
             int recordsPerPage = 12;
+            var v = db.vacancies.Where(g => g.j_title == jt && g.location == jl);
+            //if (!jt.Equals("--Select Job Title--")&& !jl.Equals("--Select Location--")) {
+            //    var v = db.vacancies.Where(g => g.j_title == jt && g.location == jl);
+            //}
+            //else if (jl.Equals("--Select Location--")) {
+            //    v = db.vacancies.Where(g =>  g.j_title == jt);
+            //}
+            //else if (jt.Equals("--Select Job Title--")) {
+            //    v = db.vacancies.Where(g => g.location == jl);
+            //}            
             var list = v.ToList().ToPagedList(page, recordsPerPage);
             return View(list);
         }
-        // GET: vacancies
+        
         public ActionResult Index()
         {
-            return View(db.vacancies.ToList());
+            return View();
         }
         // GET: vacancies/Details/5
         public ActionResult Details(int? id)

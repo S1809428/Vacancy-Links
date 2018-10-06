@@ -3,8 +3,6 @@
 @model IPagedList<VLinks.vacancy>
 
 @{
-    /**/
-
     ViewBag.Title = "Search";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -26,6 +24,7 @@
                 <label style="font-size:20px">Job Title</label>&emsp;
                 @Html.DropDownList("dropdown1", new List<SelectListItem>
                 {
+                new SelectListItem { Text = "--Select Job Title--",Value="--Select Job Title--"},
                 new SelectListItem { Text = "Animal Caretaker", Value = "Animal Caretaker"},
                 new SelectListItem { Text = "Babysitter", Value = "Babysitter"},
                 new SelectListItem { Text = "Bartender", Value = "Bartender"},
@@ -40,6 +39,7 @@
                 <label style="font-size:20px">Job Location</label>&emsp;
                 @Html.DropDownList("dropdown2", new List<SelectListItem>
                 {
+               new SelectListItem { Text = "--Select Location--",Value="--Select Location--"},
                 new SelectListItem { Text = "Ahlon", Value = "Ahlon"},
                 new SelectListItem { Text = "Bahan", Value = "Bahan"},
                 new SelectListItem { Text = "Lanmadaw", Value = "Lanmadaw"},
@@ -78,7 +78,7 @@
                             <td></td>
                             <td>
                                 @Html.ActionLink("Details", "Details", new { id = item.vid }, new { @class = "btn btn-primary" })
-                                @Html.ActionLink("Apply", "Details", new { id = item.vid }, new { @class = "btn btn-primary" })
+                                <input style="font-size:16px" class="btn btn-primary" type="button" value="Apply" onclick="login_app()" />
                             </td>
                         </tr>
                     </table>

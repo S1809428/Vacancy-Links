@@ -203,7 +203,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\vacanciesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -299,7 +298,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -320,8 +318,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\Pnp.cshtml" />
-    <Content Include="Views\Home\Tnc.cshtml" />
     <EntityDeploy Include="vacancy.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>vacancy.Designer.cs</LastGenOutput>
@@ -336,6 +332,8 @@
     <Content Include="Views\vacancies\Index.cshtml" />
     <Content Include="Views\vacancies\Vacancies.cshtml" />
     <Content Include="Views\vacancies\Search.cshtml" />
+    <Content Include="Views\vacancies\Pnp.cshtml" />
+    <Content Include="Views\vacancies\Tnc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -2,7 +2,6 @@
 @using PagedList.Mvc;
 @model IPagedList<VLinks.vacancy>
 
-
 @{
     ViewBag.Title = "Vacancies";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -16,7 +15,7 @@
             <br /><br />
         </div>
     </div>
-    @using (Html.BeginForm("Search", "vacancies", FormMethod.Post, new { page=1 }))
+    @using (Html.BeginForm("Search", "vacancies", FormMethod.Post, new { page = 1 }))
     {
         <div class="row" style="font-size:18px">
             <div class="col-md-2">
@@ -77,7 +76,7 @@
                             <td></td>
                             <td>
                                 @Html.ActionLink("Details", "Details", new { id = item.vid }, new { @class = "btn btn-primary" })
-                                @Html.ActionLink("Apply", "Details", new { id = item.vid }, new { @class = "btn btn-primary" })
+                                <input style="font-size:16px" class="btn btn-primary" type="button" value="Apply" onclick="login_app()" />
                             </td>
                         </tr>
                     </table>
